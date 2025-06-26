@@ -1,0 +1,83 @@
+﻿@page
+@model HotelReservation.Pages.BookingModel
+@{
+}
+<h1> Booking</h1>
+<hr />
+
+<div class="row">
+	<div class=" ="col-md-6">
+		<form method="post" >
+			<div class="mb-3">
+				<label asp-for="NewReservation.GuestName">Name</label>
+				<input asp-for="NewReservation.GuestName" class="form-control" />
+				<span asp-validation-for="NewReservation.GuestName" class="text-danger"></span>
+			</div>
+			<div class="mb-3">
+				<label asp-for="NewReservation.Email">Email</label>
+				<input asp-for="NewReservation.Email" class="form-control"></input>
+				<span asp-validation-for="NewReservation.Email" class="text-danger"></span>
+			</div>
+			<div class="mb-3">
+				<label asp-for="NewReservation.Country">Country</label>
+			    <input asp-for="NewReservation.Country" class="form-control"></input>
+				<span asp-validation-for="NewReservation.Country" class="text-danger"></span>
+			</div>
+			<div class="mb-3">
+				<label asp-for="NewReservation.Adults">Number of Adults</label>
+				<input asp-for="NewReservation.Adults" class="form-control"></input>
+				<span asp-validation-for="NewReservation.Adults" class="text-danger"></span>
+			</div>
+			<div class="mb-3">
+				<label asp-for="NewReservation.Children">Number of children</label>
+					<input asp-for="NewReservation.Children" class="form-control"></input>
+				<span asp-validation-for="NewReservation.Children" class="text-danger"></span>
+			</div>
+
+
+			<div class="mb-3">
+				<label asp-for="NewReservation.RoomTypeId">Room Type</label>
+				<select name="NewReservation.RoomTypeId" class="form-control">
+					<option value="">-- Select Room Type --</option>
+					@foreach (var roomType in Model.AvailableRoomTypes)
+					{
+						<option value="@roomType.RoomTypeId"> @roomType.RoomTypeName</option>
+					}
+				</select>
+				<span asp-validation-for="NewReservation.RoomTypeId" class="text-danger"></span>
+			</div>
+			<div class="mb-3">
+				<label asp-for="NewReservation.MealPlanId">Meal Plan</label>
+				<select name="NewReservation.MealPlanId" class="form-control">
+                     <option value="">-- Select Meal Plan --</option>
+                     @foreach (var plan in Model.AvailableMealPlans)
+                     {
+                          <option value="@plan.MealPlanId"> @plan.MealPlanName</option>
+                     }
+                </select>
+				<span asp-validation-for="NewReservation.MealPlanId" class="text-danger"></span>
+			</div>
+			
+
+			<div class="mb-3">
+				<label asp-for="NewReservation.CheckIn">Check In Date</label>
+				<input asp-for="NewReservation.CheckIn" type="date" class="form-control" />
+				<span asp-validation-for="NewReservation.CheckIn" class="text-danger"></span>
+			</div>
+
+			<div class="mb-3">
+				<label asp-for="NewReservation.CheckOut">Check Out Date</label>
+				<input asp-for="NewReservation.CheckOut" type="date" class="form-control" />
+				<span asp-validation-for="NewReservation.CheckOut" class="text-danger"></span>
+			</div>
+
+			<button class="btn btn-success">Book</button>
+			
+		</form>
+		<div class="mb-3">
+			<h3 asp-for="NewReservation.TotalPrice">Total Price</h3>
+			<h4>@Model.TotalPrice</h4>
+		</div>
+	</div>
+</div>
+
