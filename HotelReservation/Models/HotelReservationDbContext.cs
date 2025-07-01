@@ -27,60 +27,37 @@ public partial class HotelReservationDbContext : DbContext
     {
         modelBuilder.Entity<MealPlan>(entity =>
         {
-            entity.Property(e => e.MealPlanName)
-                .IsRequired()
-                .HasMaxLength(50)
-                .IsFixedLength();
+            entity.Property(e => e.MealPlanName).IsFixedLength();
         });
 
         modelBuilder.Entity<MealPlanRate>(entity =>
         {
-            entity.HasIndex(e => e.MealPlanRateId, "IX_MealPlanRates").IsUnique();
-
-            entity.Property(e => e.RatePerPersonPerNight).HasColumnType("decimal(8, 3)");
-
             entity.HasOne(d => d.MealPlan).WithMany(p => p.MealPlanRates)
-                .HasForeignKey(d => d.MealPlanId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_MealPlanRates_MealPlans");
         });
 
         modelBuilder.Entity<Reservation>(entity =>
         {
-            entity.HasIndex(e => e.ReservationId, "IX_Reservations").IsUnique();
-
-            entity.HasIndex(e => e.ReservationId, "IX_Reservations_1").IsUnique();
-
-            entity.Property(e => e.Country).HasMaxLength(50);
-            entity.Property(e => e.Email).HasMaxLength(50);
-            entity.Property(e => e.GuestName).HasMaxLength(50);
-            entity.Property(e => e.TotalPrice).HasColumnType("decimal(18, 0)");
-
             entity.HasOne(d => d.MealPlan).WithMany(p => p.Reservations)
-                .HasForeignKey(d => d.MealPlanId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Reservations_MealPlans");
 
             entity.HasOne(d => d.RoomType).WithMany(p => p.Reservations)
-                .HasForeignKey(d => d.RoomTypeId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Reservations_RoomTypes");
         });
 
         modelBuilder.Entity<RoomRate>(entity =>
         {
-            entity.HasIndex(e => e.RoomRateId, "IX_RoomRates").IsUnique();
-
-            entity.Property(e => e.RatePerNight).HasColumnType("decimal(8, 3)");
-
             entity.HasOne(d => d.RoomType).WithMany(p => p.RoomRates)
-                .HasForeignKey(d => d.RoomTypeId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_RoomRates_RoomTypes");
         });
 
         modelBuilder.Entity<RoomType>(entity =>
         {
-            entity.Property(e => e.RoomTypeName)
-                .IsRequired()
-                .HasMaxLength(50)
-                .IsFixedLength();
+            entity.Property(e => e.RoomTypeName).IsFixedLength();
         });
 
         OnModelCreatingPartial(modelBuilder);

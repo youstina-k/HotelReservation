@@ -2,16 +2,24 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace HotelReservation.Models;
 
 public partial class MealPlan
 {
+    [Key]
     public int MealPlanId { get; set; }
 
+    [Required]
+    [StringLength(50)]
     public string MealPlanName { get; set; }
 
+    [InverseProperty("MealPlan")]
     public virtual ICollection<MealPlanRate> MealPlanRates { get; set; } = new List<MealPlanRate>();
 
+    [InverseProperty("MealPlan")]
     public virtual ICollection<Reservation> Reservations { get; set; } = new List<Reservation>();
 }

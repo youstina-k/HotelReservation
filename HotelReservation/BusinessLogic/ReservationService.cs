@@ -1,42 +1,42 @@
-﻿    namespace HotelReservation.Business_Logic
+﻿namespace HotelReservation.Business_Logic
 {
-    
-    using HotelReservation.Models;
-    using Microsoft.EntityFrameworkCore;
-   
+    using HotelReservation.Services;
 
-    public class ReservationService : IReservationService
+
+
+    public class ReservationService
     {
-        private HotelReservationDbContext reservationDatabase;
+       
+        private MealServices meals;
+        private RoomServices rooms;
 
-        public ReservationService(HotelReservationDbContext context)
+        public ReservationService( MealServices Meals, RoomServices Rooms)
         {
-            reservationDatabase = context;
+           
+            rooms = Rooms;
+            meals = Meals;
         }
 
         public async Task<decimal> GetReservationTotalPrice(
             DateOnly checkIn,
             DateOnly checkOut,
-            int? adults,
-            int? children,
-            int? roomTypeId,
-            int? mealPlanId)
+            int adults,
+            int children,
+            int roomTypeId,
+            int mealPlanId)
         {
-            int? totalGuests = adults + children;
-            var roomRates = await reservationDatabase.RoomRates
-                      .Where(r => r.RoomTypeId == roomTypeId).ToListAsync();
+            int totalGuests = adults + children;
+            var roomRates = await rooms.GetAvailableRoomRates(roomTypeId);
 
-            var mealRates = await reservationDatabase.MealPlanRates
-                      .Where(m => m.MealPlanId == mealPlanId).ToListAsync();
+            var mealRates = await meals.GetAvailableMealPlanRates(mealPlanId);
 
-            var roomType = await reservationDatabase.RoomTypes
-             .FirstOrDefaultAsync(r => r.RoomTypeId == roomTypeId);
+            var roomType = await rooms.GetRoomTypeById(roomTypeId);
 
             decimal numberOfAdultsPerRoom = roomType.MaxAdults;
             decimal numberOfChildrenPerRoom = roomType.MaxChildren;
 
-            int roomsForAdults = (int)Math.Ceiling(adults.Value / numberOfAdultsPerRoom);
-            int roomsForChildren = (int)Math.Ceiling(children.Value / numberOfChildrenPerRoom);
+            int roomsForAdults = (int)Math.Ceiling(adults / numberOfAdultsPerRoom);
+            int roomsForChildren = (int)Math.Ceiling(children / numberOfChildrenPerRoom);
             int numberOfRooms = Math.Max(roomsForAdults, roomsForChildren);
 
             decimal total = 0;
@@ -45,18 +45,16 @@
             {
 
                 var roomRate = roomRates
-                    .FirstOrDefault(r => r.FromDate <= currentDate && r.ToDate >= currentDate);
+                    .First(r => r.FromDate <= currentDate && r.ToDate >= currentDate);
 
                 var mealRate = mealRates
-                    .FirstOrDefault(m => m.FromDate <= currentDate && m.ToDate >= currentDate);
+                    .First(m => m.FromDate <= currentDate && m.ToDate >= currentDate);
 
                 decimal dailyTotal = (roomRate.RatePerNight * numberOfRooms)
-                                    + (mealRate.RatePerPersonPerNight * totalGuests.Value);
+                                    + (mealRate.RatePerPersonPerNight * totalGuests);
 
                 total += dailyTotal;
             }
-
-
             return total;
         }
     }

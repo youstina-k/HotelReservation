@@ -1,6 +1,8 @@
+using System.ComponentModel.DataAnnotations;
 using HotelReservation.Business_Logic;
 using HotelReservation.Models;
-
+using HotelReservation.Services;
+using HotelReservation.Validation;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,9 +13,10 @@ builder.Services.AddRazorPages();
 builder.Services.AddDbContext<HotelReservationDbContext>(
     options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddScoped<IReservationService, ReservationService>();
-builder.Services.AddScoped<AvailableRoomsAndMeals>();
-builder.Services.AddScoped<SaveToDataBase>();
+builder.Services.AddScoped< ReservationService>();
+builder.Services.AddScoped<MealServices>();
+builder.Services.AddScoped<RoomServices>();
+builder.Services.AddScoped<DataServices>();
 
 var app = builder.Build();
 

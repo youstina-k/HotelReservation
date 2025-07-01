@@ -2,20 +2,28 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace HotelReservation.Models;
 
+[Index("RoomRateId", Name = "IX_RoomRates", IsUnique = true)]
 public partial class RoomRate
 {
+    [Key]
     public int RoomRateId { get; set; }
 
-    public int? RoomTypeId { get; set; }
+    public int RoomTypeId { get; set; }
 
     public DateOnly FromDate { get; set; }
 
     public DateOnly ToDate { get; set; }
 
+    [Column(TypeName = "decimal(8, 3)")]
     public decimal RatePerNight { get; set; }
 
+    [ForeignKey("RoomTypeId")]
+    [InverseProperty("RoomRates")]
     public virtual RoomType RoomType { get; set; }
 }

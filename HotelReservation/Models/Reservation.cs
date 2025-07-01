@@ -3,41 +3,43 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using HotelReservation.Validation;
+using Microsoft.EntityFrameworkCore;
 
 namespace HotelReservation.Models;
 
+
 public partial class Reservation
 {
+    [Key]
     public int ReservationId { get; set; }
-  
 
-    [Required(ErrorMessage = "Name is required.")]
+    [Required]
     [RegularExpression("^[a-zA-Z ]+$", ErrorMessage = "Name must contain only letters.")]
+    [StringLength(50)]
     public string GuestName { get; set; }
 
-    [Required(ErrorMessage = "Email is required.")]
-    [EmailAddress(ErrorMessage = "Invalid email format.")]
+    [StringLength(50)]
     public string Email { get; set; }
 
-    [Required(ErrorMessage = "Country is required.")]
+    [Required]
+    [StringLength(50)]
     [RegularExpression("^[a-zA-Z ]+$", ErrorMessage = "Country name must contain only letters.")]
     public string Country { get; set; }
 
-   
     [Range(1, 100, ErrorMessage = "At least 1 adult is required.")]
-    [Required(ErrorMessage = "Number of Adults is required.")]
-    public int? Adults { get; set; }
+    public int Adults { get; set; }
 
     [Range(0, 100, ErrorMessage = "Children count must be 0 or more.")]
-    [Required(ErrorMessage = "Number of Children is required. if there isn't please write 0")]
-    public int? Children { get; set; }
+    public int Children { get; set; }
 
     [Required(ErrorMessage = "Please Select Room Type.")]
-    public int? RoomTypeId { get; set; }
+    public int RoomTypeId { get; set; }
 
     [Required(ErrorMessage = "Please Select Meal PLan.")]
-    public int? MealPlanId { get; set; }
+    public int MealPlanId { get; set; }
+
     [RequiredDate()]
     public DateOnly CheckIn { get; set; }
 
@@ -46,7 +48,9 @@ public partial class Reservation
 
     public decimal TotalPrice { get; set; }
 
+    
     public virtual MealPlan MealPlan { get; set; }
 
+    
     public virtual RoomType RoomType { get; set; }
 }

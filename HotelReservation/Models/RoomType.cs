@@ -2,20 +2,28 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace HotelReservation.Models;
 
 public partial class RoomType
 {
+    [Key]
     public int RoomTypeId { get; set; }
 
+    [Required]
+    [StringLength(50)]
     public string RoomTypeName { get; set; }
 
     public int MaxAdults { get; set; }
 
     public int MaxChildren { get; set; }
 
+    [InverseProperty("RoomType")]
     public virtual ICollection<Reservation> Reservations { get; set; } = new List<Reservation>();
 
+    [InverseProperty("RoomType")]
     public virtual ICollection<RoomRate> RoomRates { get; set; } = new List<RoomRate>();
 }

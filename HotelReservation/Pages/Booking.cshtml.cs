@@ -1,56 +1,66 @@
-using System.Threading.Tasks;
+
 using HotelReservation.Business_Logic;
 using HotelReservation.Models;
+using HotelReservation.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
+
 
 namespace HotelReservation.Pages
 {
     public class BookingModel : PageModel
     {
-       
-        private IReservationService reservationService;
-        private AvailableRoomsAndMeals roomsAndMeals;
-        private SaveToDataBase saveNewReservations;
+
+        private ReservationService reservationService;
+        private MealServices meals;
+        private RoomServices rooms;
+        private DataServices saveNewReservations;
         [BindProperty]
         public Reservation NewReservation { get; set; }
         public List<RoomType> AvailableRoomTypes { get; set; } = [];
         public List<MealPlan> AvailableMealPlans { get; set; } = [];
         public decimal TotalPrice = 0;
-        
-        public BookingModel( IReservationService ReservationService,
-            AvailableRoomsAndMeals RoomsAndMeals, SaveToDataBase SaveNewReservations)
+
+        public BookingModel(ReservationService ReservationService,
+            MealServices Meals,RoomServices Rooms, DataServices SaveNewReservations)
         {
             reservationService = ReservationService;
-            roomsAndMeals = RoomsAndMeals;
+            rooms = Rooms;
+            meals = Meals;
             saveNewReservations = SaveNewReservations;
         }
         public async Task OnGet()
         {
-            AvailableRoomTypes = await roomsAndMeals.GetAvailableRoomTypes();
-            AvailableMealPlans = await roomsAndMeals.GetAvailableMealPlans();
+           
+            AvailableRoomTypes = await rooms.GetAvailableRoomTypes();
+            AvailableMealPlans = await meals.GetAvailableMealPlans();
         }
         public async Task<IActionResult> OnPost()
         {
-            
+
             if (ModelState.IsValid)
             {
-                TotalPrice = await reservationService.GetReservationTotalPrice(NewReservation.CheckIn,
+                try
+                {
+
+                    TotalPrice = await reservationService.GetReservationTotalPrice(NewReservation.CheckIn,
                     NewReservation.CheckOut,
                     NewReservation.Adults,
                     NewReservation.Children,
-                    NewReservation.RoomTypeId, 
+                    NewReservation.RoomTypeId,
                     NewReservation.MealPlanId);
                 NewReservation.TotalPrice = TotalPrice;
 
                 await saveNewReservations.SaveNewReservation(NewReservation);
-                
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError(string.Empty, "Something went wrong while processing your reservation. Please try again.");
+                }
             }
 
-            AvailableRoomTypes = await roomsAndMeals.GetAvailableRoomTypes();
-            AvailableMealPlans = await roomsAndMeals.GetAvailableMealPlans();
+            AvailableRoomTypes = await rooms.GetAvailableRoomTypes();
+            AvailableMealPlans = await meals.GetAvailableMealPlans();
             return Page();
         }
 

@@ -2,20 +2,28 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace HotelReservation.Models;
 
+[Index("MealPlanRateId", Name = "IX_MealPlanRates", IsUnique = true)]
 public partial class MealPlanRate
 {
+    [Key]
     public int MealPlanRateId { get; set; }
 
-    public int? MealPlanId { get; set; }
+    public int MealPlanId { get; set; }
 
     public DateOnly FromDate { get; set; }
 
     public DateOnly ToDate { get; set; }
 
+    [Column(TypeName = "decimal(6, 3)")]
     public decimal RatePerPersonPerNight { get; set; }
 
+    [ForeignKey("MealPlanId")]
+    [InverseProperty("MealPlanRates")]
     public virtual MealPlan MealPlan { get; set; }
 }
