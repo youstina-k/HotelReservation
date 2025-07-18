@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Youstina\\OneDrive\\Desktop\\HotelReservation\\HotelReservation\\HotelReservation.csproj": {}
+    "C:\\Users\\Youstina\\OneDrive\\Desktop\\test1\\HotelReservation\\HotelReservation.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Youstina\\OneDrive\\Desktop\\HotelReservation\\HotelReservation\\HotelReservation.csproj": {
+    "C:\\Users\\Youstina\\OneDrive\\Desktop\\test1\\HotelReservation\\HotelReservation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Youstina\\OneDrive\\Desktop\\HotelReservation\\HotelReservation\\HotelReservation.csproj",
+        "projectUniqueName": "C:\\Users\\Youstina\\OneDrive\\Desktop\\test1\\HotelReservation\\HotelReservation.csproj",
         "projectName": "HotelReservation",
-        "projectPath": "C:\\Users\\Youstina\\OneDrive\\Desktop\\HotelReservation\\HotelReservation\\HotelReservation.csproj",
+        "projectPath": "C:\\Users\\Youstina\\OneDrive\\Desktop\\test1\\HotelReservation\\HotelReservation.csproj",
         "packagesPath": "C:\\Users\\Youstina\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Youstina\\OneDrive\\Desktop\\HotelReservation\\HotelReservation\\obj\\",
+        "outputPath": "C:\\Users\\Youstina\\OneDrive\\Desktop\\test1\\HotelReservation\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -55,7 +55,8 @@
 
                 total += dailyTotal;
             }
-            return total;
+            return total*2;
+            
         }
     }
 }
