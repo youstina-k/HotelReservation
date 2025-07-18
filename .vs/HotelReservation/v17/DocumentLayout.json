@@ -1,0 +1,126 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Youstina\\OneDrive\\Desktop\\HotelReservation\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DA90A8D8-470A-4027-A80B-1842B3EA50C8}|HotelReservation\\HotelReservation.csproj|c:\\users\\youstina\\onedrive\\desktop\\hotelreservation\\hotelreservation\\services\\roomservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA90A8D8-470A-4027-A80B-1842B3EA50C8}|HotelReservation\\HotelReservation.csproj|solutionrelative:hotelreservation\\services\\roomservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA90A8D8-470A-4027-A80B-1842B3EA50C8}|HotelReservation\\HotelReservation.csproj|c:\\users\\youstina\\onedrive\\desktop\\hotelreservation\\hotelreservation\\services\\mealservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA90A8D8-470A-4027-A80B-1842B3EA50C8}|HotelReservation\\HotelReservation.csproj|solutionrelative:hotelreservation\\services\\mealservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA90A8D8-470A-4027-A80B-1842B3EA50C8}|HotelReservation\\HotelReservation.csproj|c:\\users\\youstina\\onedrive\\desktop\\hotelreservation\\hotelreservation\\pages\\booking.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA90A8D8-470A-4027-A80B-1842B3EA50C8}|HotelReservation\\HotelReservation.csproj|solutionrelative:hotelreservation\\pages\\booking.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA90A8D8-470A-4027-A80B-1842B3EA50C8}|HotelReservation\\HotelReservation.csproj|c:\\users\\youstina\\onedrive\\desktop\\hotelreservation\\hotelreservation\\businesslogic\\reservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA90A8D8-470A-4027-A80B-1842B3EA50C8}|HotelReservation\\HotelReservation.csproj|solutionrelative:hotelreservation\\businesslogic\\reservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA90A8D8-470A-4027-A80B-1842B3EA50C8}|HotelReservation\\HotelReservation.csproj|c:\\users\\youstina\\onedrive\\desktop\\hotelreservation\\hotelreservation\\services\\dataservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA90A8D8-470A-4027-A80B-1842B3EA50C8}|HotelReservation\\HotelReservation.csproj|solutionrelative:hotelreservation\\services\\dataservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA90A8D8-470A-4027-A80B-1842B3EA50C8}|HotelReservation\\HotelReservation.csproj|c:\\users\\youstina\\onedrive\\desktop\\hotelreservation\\hotelreservation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA90A8D8-470A-4027-A80B-1842B3EA50C8}|HotelReservation\\HotelReservation.csproj|solutionrelative:hotelreservation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RoomServices.cs",
+              "DocumentMoniker": "C:\\Users\\Youstina\\OneDrive\\Desktop\\HotelReservation\\HotelReservation\\Services\\RoomServices.cs",
+              "RelativeDocumentMoniker": "HotelReservation\\Services\\RoomServices.cs",
+              "ToolTip": "C:\\Users\\Youstina\\OneDrive\\Desktop\\HotelReservation\\HotelReservation\\Services\\RoomServices.cs",
+              "RelativeToolTip": "HotelReservation\\Services\\RoomServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T09:52:21.431Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MealServices.cs",
+              "DocumentMoniker": "C:\\Users\\Youstina\\OneDrive\\Desktop\\HotelReservation\\HotelReservation\\Services\\MealServices.cs",
+              "RelativeDocumentMoniker": "HotelReservation\\Services\\MealServices.cs",
+              "ToolTip": "C:\\Users\\Youstina\\OneDrive\\Desktop\\HotelReservation\\HotelReservation\\Services\\MealServices.cs",
+              "RelativeToolTip": "HotelReservation\\Services\\MealServices.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAzwCMAAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T09:56:27.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DataServices.cs",
+              "DocumentMoniker": "C:\\Users\\Youstina\\OneDrive\\Desktop\\HotelReservation\\HotelReservation\\Services\\DataServices.cs",
+              "RelativeDocumentMoniker": "HotelReservation\\Services\\DataServices.cs",
+              "ToolTip": "C:\\Users\\Youstina\\OneDrive\\Desktop\\HotelReservation\\HotelReservation\\Services\\DataServices.cs",
+              "RelativeToolTip": "HotelReservation\\Services\\DataServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T09:50:55.27Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Youstina\\OneDrive\\Desktop\\HotelReservation\\HotelReservation\\Program.cs",
+              "RelativeDocumentMoniker": "HotelReservation\\Program.cs",
+              "ToolTip": "C:\\Users\\Youstina\\OneDrive\\Desktop\\HotelReservation\\HotelReservation\\Program.cs",
+              "RelativeToolTip": "HotelReservation\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T10:30:51.774Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ReservationService.cs",
+              "DocumentMoniker": "C:\\Users\\Youstina\\OneDrive\\Desktop\\HotelReservation\\HotelReservation\\BusinessLogic\\ReservationService.cs",
+              "RelativeDocumentMoniker": "HotelReservation\\BusinessLogic\\ReservationService.cs",
+              "ToolTip": "C:\\Users\\Youstina\\OneDrive\\Desktop\\HotelReservation\\HotelReservation\\BusinessLogic\\ReservationService.cs",
+              "RelativeToolTip": "HotelReservation\\BusinessLogic\\ReservationService.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAQwAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T12:33:14.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Booking.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Youstina\\OneDrive\\Desktop\\HotelReservation\\HotelReservation\\Pages\\Booking.cshtml.cs",
+              "RelativeDocumentMoniker": "HotelReservation\\Pages\\Booking.cshtml.cs",
+              "ToolTip": "C:\\Users\\Youstina\\OneDrive\\Desktop\\HotelReservation\\HotelReservation\\Pages\\Booking.cshtml.cs",
+              "RelativeToolTip": "HotelReservation\\Pages\\Booking.cshtml.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowDkAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T13:17:25.767Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
